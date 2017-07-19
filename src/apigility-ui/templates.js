@@ -94,6 +94,21 @@ angular.module("apigility-ui/api-module/api-module.html", []).run(["$templateCac
     "          </div>\n" +
     "        </form>\n" +
     "      </div>\n" +
+    "      <!--region PerfOps Update-->\n" +
+    "      <div class=\"col-sm-6\">\n" +
+    "        <h3>Tag</h3>\n" +
+    "        <br/>\n" +
+    "        <form class=\"form-inline\" role=\"form\" unsaved-warning-form>\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <label class=\"control-label\">Set tag for API</label>\n" +
+    "            <input class=\"form-control\" ng-model=\"vm.module.tag\" ng-disabled=\"vm.disabled\" type=\"text\"/>\n" +
+    "          </div>\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <button type=\"submit\" class=\"btn btn-success btn-sm\" ng-click=\"vm.setTag()\" ladda=\"vm.loading\" ng-hide=\"vm.disabled\">Save</span></button>\n" +
+    "          </div>\n" +
+    "        </form>\n" +
+    "      </div>\n" +
+    "      <!--endregion-->\n" +
     "      <br clear=\"left\"><br />\n" +
     "      <h3>REST</h3>\n" +
     "      <table class=\"table table-bordered col-sm-12\">\n" +
