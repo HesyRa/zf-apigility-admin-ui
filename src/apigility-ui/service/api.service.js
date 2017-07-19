@@ -917,6 +917,32 @@
         return callback(true, null);
       });
     };
+      //region PerfOps Update
+      this.setTag = function(module, tag, callback) {
+          var allowed = [ 'module', 'tag' ];
+          xhr.update(agApiPath + '/tag', [ module, tag ], allowed)
+              .then(function (response) {
+                  growl.success('API tag updated');
+                  return callback(false, response);
+              })
+              .catch(function (err) {
+                  growl.error('Error updating API tag', {ttl: -1});
+                  return callback(true, null);
+              });
+      };
+      this.setVisibility = function(module, visibility, callback) {
+          var allowed = [ 'module', 'visibility' ];
+          xhr.update(agApiPath + '/visibility', [ module, visibility ], allowed)
+              .then(function (response) {
+                  growl.success('API visibility updated');
+                  return callback(false, response);
+              })
+              .catch(function (err) {
+                  growl.error('Error updating API visibility', {ttl: -1});
+                  return callback(true, null);
+              });
+      };
+      //endregion
 
     this.getSourceCode = function(module, classname, callback) {
       var moduleParam = this.normalizeModuleName(module);

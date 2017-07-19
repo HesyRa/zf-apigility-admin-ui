@@ -137,6 +137,28 @@
         }
       });
     };
+      // region PerfOps Update
+      vm.setTag = function() {
+          vm.loading = true;
+          api.setTag(vm.apiName, vm.module.tag, function(err, respomse){
+              vm.loading = false;
+              if (err) {
+                  vm.alert = response;
+                  return;
+              }
+          });
+      };
+      vm.setVisibility = function() {
+          vm.loading = true;
+          api.setVisibility(vm.apiName, vm.module.visibility, function(err, respomse){
+              vm.loading = false;
+              if (err) {
+                  vm.alert = response;
+                  return;
+              }
+          });
+      };
+      // endregion
 
     vm.saveAuthentication = function(auth) {
       vm.loading = true;

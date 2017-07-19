@@ -108,6 +108,22 @@ angular.module("apigility-ui/api-module/api-module.html", []).run(["$templateCac
     "          </div>\n" +
     "        </form>\n" +
     "      </div>\n" +
+    "      <div class=\"col-sm-6\">\n" +
+    "        <h3>Visibility</h3>\n" +
+    "        <br/>\n" +
+    "        <form class=\"form-inline\" role=\"form\" unsaved-warning-form>\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <label class=\"control-label\">Set visibility for API</label>\n" +
+    "            <select class=\"form-control\" ng-model=\"vm.module.visibility\" ng-disabled=\"vm.disabled\">\n" +
+    "              <option value=\"public\">Public</option>\n" +
+    "              <option value=\"private\">Private</option>\n" +
+    "            </select>\n" +
+    "          </div>\n" +
+    "          <div class=\"form-group\">\n" +
+    "            <button type=\"submit\" class=\"btn btn-success btn-sm\" ng-click=\"vm.setVisibility()\" ladda=\"vm.loading\" ng-hide=\"vm.disabled\">Save</span></button>\n" +
+    "          </div>\n" +
+    "        </form>\n" +
+    "      </div>\n" +
     "      <!--endregion-->\n" +
     "      <br clear=\"left\"><br />\n" +
     "      <h3>REST</h3>\n" +
