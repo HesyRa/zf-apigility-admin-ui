@@ -46,7 +46,7 @@
         <form class="form-inline" role="form" unsaved-warning-form>
           <div class="form-group">
             <label class="control-label">Set tag for API</label>
-            <input class="form-control" ng-model="vm.module.tag" ng-disabled="vm.disabled" type="text"/>
+            <input class="form-control" ng-model="vm.tag" ng-disabled="vm.disabled" type="text"/>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-success btn-sm" ng-click="vm.setTag()" ladda="vm.loading" ng-hide="vm.disabled">Save</span></button>
@@ -59,7 +59,7 @@
         <form class="form-inline" role="form" unsaved-warning-form>
           <div class="form-group">
             <label class="control-label">Set visibility for API</label>
-            <select class="form-control" ng-model="vm.module.visibility" ng-disabled="vm.disabled">
+            <select class="form-control" ng-model="vm.visibility" ng-disabled="vm.disabled">
               <option value="public" selected="selected">Public</option>
               <option value="private">Private</option>
             </select>

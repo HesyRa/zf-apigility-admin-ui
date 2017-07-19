@@ -101,7 +101,7 @@ angular.module("apigility-ui/api-module/api-module.html", []).run(["$templateCac
     "        <form class=\"form-inline\" role=\"form\" unsaved-warning-form>\n" +
     "          <div class=\"form-group\">\n" +
     "            <label class=\"control-label\">Set tag for API</label>\n" +
-    "            <input class=\"form-control\" ng-model=\"vm.module.tag\" ng-disabled=\"vm.disabled\" type=\"text\"/>\n" +
+    "            <input class=\"form-control\" ng-model=\"vm.tag\" ng-disabled=\"vm.disabled\" type=\"text\"/>\n" +
     "          </div>\n" +
     "          <div class=\"form-group\">\n" +
     "            <button type=\"submit\" class=\"btn btn-success btn-sm\" ng-click=\"vm.setTag()\" ladda=\"vm.loading\" ng-hide=\"vm.disabled\">Save</span></button>\n" +
@@ -114,7 +114,7 @@ angular.module("apigility-ui/api-module/api-module.html", []).run(["$templateCac
     "        <form class=\"form-inline\" role=\"form\" unsaved-warning-form>\n" +
     "          <div class=\"form-group\">\n" +
     "            <label class=\"control-label\">Set visibility for API</label>\n" +
-    "            <select class=\"form-control\" ng-model=\"vm.module.visibility\" ng-disabled=\"vm.disabled\">\n" +
+    "            <select class=\"form-control\" ng-model=\"vm.visibility\" ng-disabled=\"vm.disabled\">\n" +
     "              <option value=\"public\" selected=\"selected\">Public</option>\n" +
     "              <option value=\"private\">Private</option>\n" +
     "            </select>\n" +

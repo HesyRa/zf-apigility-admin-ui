@@ -14,8 +14,6 @@
 
     vm.apiName = $stateParams.api;
     vm.version = $stateParams.ver;
-    vm.tag = $stateParams.tag;
-    vm.visibility = $stateParams.visibility ? $stateParams.visibility : 'public';
     vm.loading = false;
     vm.setSelected = SidebarService.setSelected;
     vm.getSelected = SidebarService.getSelected;
@@ -140,9 +138,16 @@
       });
     };
       // region PerfOps Update
+      api.getTag(vm.apiName, vm.tag, function(result){
+          if (result === false) {
+              vm.tag = '';
+          } else {
+              vm.tag = result;
+          }
+      });
       vm.setTag = function() {
           vm.loading = true;
-          api.setTag(vm.apiName, vm.module.tag, function(err, respomse){
+          api.setTag(vm.apiName, vm.tag, function(err, respomse){
               vm.loading = false;
               if (err) {
                   vm.alert = response;
@@ -150,9 +155,16 @@
               }
           });
       };
+      api.getVisibility(vm.apiName, vm.visibility, function(result){
+          if (result === false) {
+              vm.visibility = 'public';
+          } else {
+              vm.visibility = result;
+          }
+      });
       vm.setVisibility = function() {
           vm.loading = true;
-          api.setVisibility(vm.apiName, vm.module.visibility, function(err, respomse){
+          api.setVisibility(vm.apiName, vm.visibility, function(err, respomse){
               vm.loading = false;
               if (err) {
                   vm.alert = response;

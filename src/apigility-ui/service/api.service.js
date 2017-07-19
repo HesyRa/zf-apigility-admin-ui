@@ -918,9 +918,21 @@
       });
     };
       //region PerfOps Update
+      this.getTag = function(module, tag, callback) {
+          var moduleParam = this.normalizeModuleName(module);
+          xhr.get(agApiPath + '/module/' + moduleParam + '/tag', 'tag', 2)
+              .then(function (response) {
+                  return callback(response);
+              })
+              .catch(function (err) {
+                  growl.error('Unable to fetch API tag details', {ttl: -1});
+                  return false;
+              });
+      };
       this.setTag = function(module, tag, callback) {
-          var allowed = [ 'module', 'tag' ];
-          xhr.update(agApiPath + '/tag', [ module, tag ], allowed)
+          var data = { 'tag' : tag},
+              moduleParam = this.normalizeModuleName(module);
+          xhr.save(agApiPath + '/module/' + moduleParam + '/tag', data, 2)
               .then(function (response) {
                   growl.success('API tag updated');
                   return callback(false, response);
@@ -930,9 +942,21 @@
                   return callback(true, null);
               });
       };
+      this.getVisibility = function(module, visibility, callback) {
+          var moduleParam = this.normalizeModuleName(module);
+          xhr.get(agApiPath + '/module/' + moduleParam + '/visibility', 'visibility', 2)
+              .then(function (response) {
+                  return callback(response);
+              })
+              .catch(function (err) {
+                  growl.error('Unable to fetch API visibility details', {ttl: -1});
+                  return false;
+              });
+      };
       this.setVisibility = function(module, visibility, callback) {
-          var allowed = [ 'module', 'visibility' ];
-          xhr.update(agApiPath + '/visibility', [ module, visibility ], allowed)
+          var data = { 'visibility' : visibility},
+              moduleParam = this.normalizeModuleName(module);
+          xhr.save(agApiPath + '/module/' + moduleParam + '/visibility', data, 2)
               .then(function (response) {
                   growl.success('API visibility updated');
                   return callback(false, response);
