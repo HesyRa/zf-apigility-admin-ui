@@ -14,6 +14,8 @@
 
     vm.apiName = $stateParams.api;
     vm.version = $stateParams.ver;
+    vm.tag = $stateParams.tag;
+    vm.visibility = $stateParams.visibility ? $stateParams.visibility : 'public';
     vm.loading = false;
     vm.setSelected = SidebarService.setSelected;
     vm.getSelected = SidebarService.getSelected;
