@@ -59,7 +59,7 @@
         <form class="form-inline" role="form" unsaved-warning-form>
           <div class="form-group">
             <label class="control-label">Set visibility for API</label>
-            <select class="form-control" ng-init="vm.module.visibility = vm.module.visibility? vm.module.visibility: options[0]" ng-model="vm.module.visibility" ng-disabled="vm.disabled">
+            <select class="form-control" ng-init="vm.module.visibility = vm.module.visibility == '? undefined:undefined ?' ? 'public':vm.module.visibility" ng-model="vm.module.visibility" ng-disabled="vm.disabled">
               <option value="public" selected="selected">Public</option>
               <option value="private">Private</option>
             </select>

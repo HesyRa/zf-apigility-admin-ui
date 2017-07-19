@@ -114,7 +114,7 @@ angular.module("apigility-ui/api-module/api-module.html", []).run(["$templateCac
     "        <form class=\"form-inline\" role=\"form\" unsaved-warning-form>\n" +
     "          <div class=\"form-group\">\n" +
     "            <label class=\"control-label\">Set visibility for API</label>\n" +
-    "            <select class=\"form-control\" ng-init=\"vm.module.visibility = vm.module.visibility? vm.module.visibility: options[0]\" ng-model=\"vm.module.visibility\" ng-disabled=\"vm.disabled\">\n" +
+    "            <select class=\"form-control\" ng-init=\"vm.module.visibility = vm.module.visibility == '? undefined:undefined ?' ? 'public':vm.module.visibility\" ng-model=\"vm.module.visibility\" ng-disabled=\"vm.disabled\">\n" +
     "              <option value=\"public\" selected=\"selected\">Public</option>\n" +
     "              <option value=\"private\">Private</option>\n" +
     "            </select>\n" +
